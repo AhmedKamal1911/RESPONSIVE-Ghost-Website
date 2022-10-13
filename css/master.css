@@ -1,0 +1,206 @@
+:root{
+--main-color:#2490e3;
+--transparent-color:#004c86b9;
+--secound-color:white;
+--main-transition:0.4s;
+}
+/* Start-Global-Rules */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body{
+  font-family:'Gemunu Libre', sans-serif;
+}
+html{
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+}
+ul{
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+}
+.container{
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* Start-Over-lay */
+main.landing::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.448);
+}
+/* End-Over-lay */
+/* END-Global-Rules */
+/* Start-Header */
+header{
+position: absolute;
+z-index: 2;
+top: 0;
+left: 0;
+width: 100%;
+}
+header .container{
+position: relative;
+min-height: 80px;
+}
+header .container::after{
+  position: absolute;
+  content: "";
+  width: calc(100% - 30px);
+  height: 2px;
+  background-color: var(--secound-color);
+  bottom: 0;
+}
+header .container .logo img{
+width: 130px;
+}
+header .container nav{
+  flex: 1;
+  justify-content: flex-end;
+}
+header .container nav ul{
+display: flex;
+}
+@media(max-width:768px){
+  header .container nav ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    flex-direction: column;
+    background-color: rgb(14, 14, 14);
+    z-index: 9;
+    text-align: center;
+  }
+} 
+@media(min-width:768px){
+  header .container nav i{
+    display: none;
+  }
+}
+@media(max-width:767px){
+  header .container nav i{
+    position: relative;
+  }
+  header .container nav i:hover+ul{
+    display: flex;
+  }
+}
+
+header .container nav ul li a{
+display: block;
+position: relative;
+padding: 30px 15px;
+z-index: 3;
+transition: border,color var(--main-transition);
+}
+header .container nav ul li a.active,
+header .container nav ul li a:hover{
+  color:var(--main-color) ;
+  border-bottom: 2px solid var(--main-color);
+}
+header .container .search{
+  justify-content: flex-end;
+  border-left: 2px solid var(--secound-color);
+  width: 30px;
+  height: 20px;
+}
+/* End-Header */
+/* Start-Landing-Section */
+main.landing{
+  min-height: 100vh;
+  background: url(../images/owl.jpg);
+  background-size: cover;
+  position: relative;
+}
+main.landing i{
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+z-index: 2;
+}
+main.landing i:nth-of-type(1){
+left: 30px;
+transition: var(--main-transition);
+}
+main.landing i:nth-of-type(1):hover{
+animation: to-left 0.8s both infinite;
+}
+@keyframes to-left{
+  0%,100%{
+    left: 30px;
+  }
+  50%{
+    left: 20px;
+  }
+}
+main.landing i:nth-of-type(2){
+right: 30px;
+}
+main.landing i:nth-of-type(2):hover{
+  animation: to-right 0.8s both infinite;
+}
+@keyframes to-right{
+  0%,100%{
+    right: 30px;
+  }
+  50%{
+    right: 20px;
+  }
+}
+main.landing .landing-content{
+  justify-content: flex-end;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 300px;
+  padding: 40px;
+  background-color: var(--transparent-color);
+}
+main.landing .landing-content .content{
+  max-width:500px ;
+}
+main.landing .landing-content .content p{
+line-height: 1.7;
+}
+/* End-Landing-Section */
