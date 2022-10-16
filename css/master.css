@@ -4,6 +4,7 @@
 --secound-color:white;
 --gray-color:gray;
 --black-color:black;
+--overlay-color:rgba(0, 0, 0, 0.448);
 --main-transition:0.4s;
 }
 /* Start-Global-Rules */
@@ -110,7 +111,7 @@ font-size: 50px;
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.448);
+  background-color: var(--overlay-color);
 }
 /* End-Over-lay */
 /* END-Global-Rules */
@@ -152,7 +153,7 @@ transition: var(--main-transition);
     left: 0%;
     width:100%;
     flex-direction: column;
-    background-color: rgb(14, 14, 14);
+    background-color: var(--black-color);
     z-index: 9;
     text-align: center;
   }
@@ -288,7 +289,7 @@ line-height: 1.7;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid var(--secound-color);
   cursor: pointer;
   transition: var(--main-transition);
 }
@@ -335,3 +336,68 @@ line-height: 1.7;
   color: var(--gray-color);
 }
 /* END-services-section*/
+/* Start-our-design */
+section.our-design{
+  background-image: url(../images/fa.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+section.our-design::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+section.our-design .img{
+  flex: 1;
+  text-align: center;
+  position: relative;
+  bottom: 50px;
+}
+section.our-design .img img{
+  position: absolute;
+  width: 300px;
+}
+@media(max-width:767px){
+  section.our-design .img img{
+    display: none;
+  }
+}
+section.our-design .design-content{
+  width: 800px;
+  max-width: 100%;
+  height: 300px;
+  padding: 30px;
+  background-color: var(--transparent-color);
+  position: relative;
+}
+
+section.our-design .design-content h3{
+  color: var(--secound-color);
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+section.our-design .design-content ul li{
+font-size: 22px;
+color: var(--secound-color);
+letter-spacing: 3px;
+text-transform: capitalize;
+}
+@media(max-width:767px){
+  section.our-design .design-content ul li{
+    font-size: 18px;
+  }
+}
+section.our-design .design-content ul li i{
+  margin-right: 15px;
+  font-size: 18px;
+  color: var(--secound-color);
+}
+/* End-our-design */
