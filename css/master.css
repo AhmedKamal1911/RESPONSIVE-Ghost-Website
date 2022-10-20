@@ -515,6 +515,15 @@ section.video .see-more h3{
   margin: 30px 0;
   letter-spacing: 2px;
 }
+@media(max-width:767px){
+  section.video .see-more h3{
+    margin: 8px 0;
+    font-size: 18px;
+  }
+  section.video .see-more p{
+    font-size: 15px;
+  }
+}
 section.video .see-more a{
   width: fit-content;
   display: block;
@@ -523,4 +532,24 @@ section.video .see-more a{
   margin: 15px auto;
   background-color: black;
 }
+@media(max-width:767px){
+  section.video .see-more a{
+    padding: 5px 15px;
+  }
+}
 /* End-Video-Section */
+/* Start-About-us */
+section.about-us{
+overflow: hidden;
+}
+section.about-us .container .img{
+position: relative;
+text-align: center;
+}
+section.about-us .container .img img{
+max-width: 100%;
+bottom: -150px;
+position: relative;
+}
+
+/* End-About-us */
