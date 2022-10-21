@@ -703,5 +703,37 @@ section.testimonial .container .box .skill .progress> span > span::after{
   left: 30%;
   top: 100%;
 }
-
 /* End-testimonial-section */
+/* Start-Quote-Section */
+section.quote{
+  position: relative;
+  background: url(../images/quote.jpg) no-repeat ;
+  background-size: cover;
+  min-height: 250px;
+}
+section.quote::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.829);
+}
+section.quote q{
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  color: var(--secound-color);
+}
+@media(max-width:280px){
+  section.quote q{
+    font-size: 30px;
+  }
+}
+section.quote p{
+  position: relative;
+  text-align: center;
+  color: var(--secound-color);
+}
+/* End-Quote-Section */
