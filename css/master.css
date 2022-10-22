@@ -756,6 +756,7 @@ transition: var(--main-transition);
 section.pricing .container .plan .plan-head:hover::before,
 section.pricing .container .plan .plan-head:hover::after{
   height: 100%;
+  transition-delay: 0.4s;
 }
 section.pricing .container .plan .plan-head:hover{
   background-color: rgba(16, 144, 218, 0.378);
@@ -834,3 +835,92 @@ background-color: var(--main-color);
 color: white;
 }
 /* End-Pricing-Section */
+/* Start-Subscribe-section */
+section.subscribe{
+  background: url(../images/galax.jpg);
+  position: relative;
+}
+section.subscribe::before{
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--overlay-color);
+}
+section.subscribe .container{
+position: relative;
+}
+@media(max-width:767px){
+  section.subscribe .container{
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+section.subscribe .container form{
+  display: flex;
+  width: 500px;
+  max-width: 100%;
+  position: relative;
+}
+@media(max-width:767px){
+  section.subscribe .container form{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+}
+section.subscribe .container form i{
+  position: absolute;
+  left: 4.5px;
+  transform: translateY(-50%);
+  top: 50%;
+  transition: var(--main-transition);
+}
+@media(max-width:767px){
+  section.subscribe .container form i{
+    top: 27px;
+  }
+}
+section.subscribe .container form input[type="email"]{
+  padding: 20px 15px 20px 25px;
+  width: calc(100% - 130px);
+  outline: none;
+  border: none;
+}
+@media(max-width:767px){
+  section.subscribe .container form input[type="email"]{
+    width: 100%;
+  }
+}
+section.subscribe .container form input[type="email"]:focus +i{
+opacity: 0;
+}
+section.subscribe .container form input[type="submit"]{
+  border: none;
+  width: 130px;
+  background-color: var(--main-color);
+  color: var(--secound-color);
+}
+@media(max-width:767px){
+  section.subscribe .container form input[type="submit"]{
+    align-self: center;
+    padding: 15px;
+  }
+}
+section.subscribe .container .desc{
+flex: 1;
+margin-left: 40px;
+color: white;
+font-size: 19px;
+line-height: 1.5;
+}
+@media(max-width:767px){
+  section.subscribe .container .desc{
+    order: -1;
+    margin-left: 0;
+    text-align: center;
+  }
+}
+/* End-Subscribe-section */
